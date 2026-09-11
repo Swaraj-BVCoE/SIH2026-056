@@ -1,0 +1,1513 @@
+2026-09-01 19:03:58 | ERROR    | scraper.base_scraper:176 - [air_india_direct] PARSE ERROR: Failed to load Air India page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.airindia.com/in/en/book/flight-search.html
+Call log:
+navigating to "https://www.airindia.com/in/en/book/flight-search.html", waiting until "domcontentloaded"
+
+2026-09-01 19:05:00 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BOM-20260905&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788269699825&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BOM-20260905&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788269699825&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 19:33:40 | ERROR    | scraper.base_scraper:185 - [indigo_direct] Unexpected error: Page.content: Target page, context or browser has been closed
+Traceback (most recent call last):
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 294, in <module>
+    cli()
+    └ <Group cli>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function BaseCommand.main at 0x00000190636031A0>
+           └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x00000190645AA390>
+         │    └ <function MultiCommand.invoke at 0x0000019063610400>
+         └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+           │               │       │       │      └ <click.core.Context object at 0x0000019064529550>
+           │               │       │       └ <function Command.invoke at 0x0000019063603D80>
+           │               │       └ <Command scrape>
+           │               └ <click.core.Context object at 0x0000019064529550>
+           └ <function MultiCommand.invoke.<locals>._process_result at 0x00000190647FDB20>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+           │   │      │    │           └ <click.core.Context object at 0x0000019064529550>
+           │   │      │    └ <function cmd_scrape at 0x00000190645AD940>
+           │   │      └ <Command scrape>
+           │   └ <function Context.invoke at 0x0000019063602700>
+           └ <click.core.Context object at 0x0000019064529550>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+                       │       └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+                       └ ()
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 193, in cmd_scrape
+    results = asyncio.run(
+              │       └ <function run at 0x00000190619B54E0>
+              └ <module 'asyncio' from 'C:\\Users\\a\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_all at 0x00000190668FD3C0>
+           │      └ <function Runner.run at 0x00000190633CD580>
+           └ <asyncio.runners.Runner object at 0x00000190645AB050>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_all() running at C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py:...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000190633C7060>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x00000190645AB050>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000001906348F240>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000190633CCE00>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001906196A3E0>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py", line 71, in run_single_job
+    raw_records: list[FareRecord] = await scraper.scrape(
+                      │                   │       └ <function BaseScraper.scrape at 0x000001906685ACA0>
+                      │                   └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+                      └ <class 'scraper.base_scraper.FareRecord'>
+
+> File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 149, in scrape
+    async for attempt in AsyncRetrying(
+              │          └ <class 'tenacity.asyncio.AsyncRetrying'>
+              └ <tenacity.AttemptManager object at 0x000001906C828B10>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 1719807410320: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+               │    │                └ <AsyncRetrying object at 0x1906c828210 (stop=<tenacity.stop.stop_after_attempt object at 0x000001906C833550>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x0000019066403F60>
+               └ <AsyncRetrying object at 0x1906c828210 (stop=<tenacity.stop.stop_after_attempt object at 0x000001906C833550>, wait=<tenacity....
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 1719807410320: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x000001906C844180>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 1719807410320: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, ...
+           └ <function BaseRetrying._post_retry_check_actions.<locals>.<lambda> at 0x000001906C844220>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                 │   │  │       └ <function Future.result at 0x00000190615D9080>
+                                 │   │  └ <Future at 0x1906c8aaf50 state=finished raised TargetClosedError>
+                                 │   └ <RetryCallState 1719807410320: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                                 └ <RetryCallState 1719807410320: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 161, in scrape
+    records = await self._fetch(page, route, travel_date)
+                    │    │      │     │      └ datetime.date(2026, 9, 18)
+                    │    │      │     └ Route(origin='BOM', destination='DEL')
+                    │    │      └ <Page url='https://www.goindigo.in/flight-booking.html'>
+                    │    └ <function IndigoScraper._fetch at 0x00000190661AE5C0>
+                    └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 88, in _fetch
+    return await self._parse_html(page, route, travel_date)
+                 │    │           │     │      └ datetime.date(2026, 9, 18)
+                 │    │           │     └ Route(origin='BOM', destination='DEL')
+                 │    │           └ <Page url='https://www.goindigo.in/flight-booking.html'>
+                 │    └ <function IndigoScraper._parse_html at 0x000001906685B880>
+                 └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 368, in _parse_html
+    found = await self.wait_for_results(
+                  │    └ <function BaseScraper.wait_for_results at 0x000001906685B060>
+                  └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 283, in wait_for_results
+    await self.check_for_block(page)
+          │    │               └ <Page url='https://www.goindigo.in/flight-booking.html'>
+          │    └ <function BaseScraper.check_for_block at 0x000001906685AFC0>
+          └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 249, in check_for_block
+    content = await page.content()
+                    │    └ <function Page.content at 0x00000190663B4D60>
+                    └ <Page url='https://www.goindigo.in/flight-booking.html'>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\async_api\_generated.py", line 8708, in content
+    return mapping.from_maybe_impl(await self._impl_obj.content())
+           │       │                     │    │         └ <function Page.content at 0x0000019066350AE0>
+           │       │                     │    └ <Page url='https://www.goindigo.in/flight-booking.html'>
+           │       │                     └ <Page url='https://www.goindigo.in/flight-booking.html'>
+           │       └ <function ImplToApiMapping.from_maybe_impl at 0x000001906635EF20>
+           └ <playwright._impl._impl_to_api_mapping.ImplToApiMapping object at 0x0000019066120210>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_page.py", line 507, in content
+    return await self._main_frame.content()
+                 │    │           └ <function Frame.content at 0x0000019066307B00>
+                 │    └ <Frame name= url='https://www.goindigo.in/flight-booking.html'>
+                 └ <Page url='https://www.goindigo.in/flight-booking.html'>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_frame.py", line 416, in content
+    return await self._channel.send("content")
+                 │    │        └ <function Channel.send at 0x00000190661FBA60>
+                 │    └ <playwright._impl._connection.Channel object at 0x000001906C831AD0>
+                 └ <Frame name= url='https://www.goindigo.in/flight-booking.html'>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+                 │    │           └ <function Connection.wrap_api_call at 0x00000190662519E0>
+                 │    └ <playwright._impl._connection.Connection object at 0x000001906698A050>
+                 └ <playwright._impl._connection.Channel object at 0x000001906C831AD0>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+          └ <function rewrite_error at 0x00000190661ADBC0>
+
+playwright._impl._errors.TargetClosedError: Page.content: Target page, context or browser has been closed
+2026-09-01 19:33:40 | ERROR    | scraper.base_scraper:185 - [indigo_direct] Unexpected error: Page.content: Target page, context or browser has been closed
+Traceback (most recent call last):
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 294, in <module>
+    cli()
+    └ <Group cli>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function BaseCommand.main at 0x00000190636031A0>
+           └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x00000190645AA390>
+         │    └ <function MultiCommand.invoke at 0x0000019063610400>
+         └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+           │               │       │       │      └ <click.core.Context object at 0x0000019064529550>
+           │               │       │       └ <function Command.invoke at 0x0000019063603D80>
+           │               │       └ <Command scrape>
+           │               └ <click.core.Context object at 0x0000019064529550>
+           └ <function MultiCommand.invoke.<locals>._process_result at 0x00000190647FDB20>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+           │   │      │    │           └ <click.core.Context object at 0x0000019064529550>
+           │   │      │    └ <function cmd_scrape at 0x00000190645AD940>
+           │   │      └ <Command scrape>
+           │   └ <function Context.invoke at 0x0000019063602700>
+           └ <click.core.Context object at 0x0000019064529550>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+                       │       └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+                       └ ()
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 193, in cmd_scrape
+    results = asyncio.run(
+              │       └ <function run at 0x00000190619B54E0>
+              └ <module 'asyncio' from 'C:\\Users\\a\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_all at 0x00000190668FD3C0>
+           │      └ <function Runner.run at 0x00000190633CD580>
+           └ <asyncio.runners.Runner object at 0x00000190645AB050>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_all() running at C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py:...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000190633C7060>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x00000190645AB050>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000001906348F240>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000190633CCE00>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001906196A3E0>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py", line 71, in run_single_job
+    raw_records: list[FareRecord] = await scraper.scrape(
+                      │                   │       └ <function BaseScraper.scrape at 0x000001906685ACA0>
+                      │                   └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+                      └ <class 'scraper.base_scraper.FareRecord'>
+
+> File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 149, in scrape
+    async for attempt in AsyncRetrying(
+              │          └ <class 'tenacity.asyncio.AsyncRetrying'>
+              └ <tenacity.AttemptManager object at 0x000001906C7E8350>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 1719807159312: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+               │    │                └ <AsyncRetrying object at 0x1906c7eab50 (stop=<tenacity.stop.stop_after_attempt object at 0x000001906C7A8B50>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x0000019066403F60>
+               └ <AsyncRetrying object at 0x1906c7eab50 (stop=<tenacity.stop.stop_after_attempt object at 0x000001906C7A8B50>, wait=<tenacity....
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 1719807159312: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x000001906C847EC0>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 1719807159312: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, ...
+           └ <function BaseRetrying._post_retry_check_actions.<locals>.<lambda> at 0x000001906C847F60>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                 │   │  │       └ <function Future.result at 0x00000190615D9080>
+                                 │   │  └ <Future at 0x1906c8d28d0 state=finished raised TargetClosedError>
+                                 │   └ <RetryCallState 1719807159312: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                                 └ <RetryCallState 1719807159312: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 161, in scrape
+    records = await self._fetch(page, route, travel_date)
+                    │    │      │     │      └ datetime.date(2026, 9, 19)
+                    │    │      │     └ Route(origin='BOM', destination='DEL')
+                    │    │      └ <Page url='https://www.goindigo.in/flight-booking.html'>
+                    │    └ <function IndigoScraper._fetch at 0x00000190661AE5C0>
+                    └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 88, in _fetch
+    return await self._parse_html(page, route, travel_date)
+                 │    │           │     │      └ datetime.date(2026, 9, 19)
+                 │    │           │     └ Route(origin='BOM', destination='DEL')
+                 │    │           └ <Page url='https://www.goindigo.in/flight-booking.html'>
+                 │    └ <function IndigoScraper._parse_html at 0x000001906685B880>
+                 └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 368, in _parse_html
+    found = await self.wait_for_results(
+                  │    └ <function BaseScraper.wait_for_results at 0x000001906685B060>
+                  └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 283, in wait_for_results
+    await self.check_for_block(page)
+          │    │               └ <Page url='https://www.goindigo.in/flight-booking.html'>
+          │    └ <function BaseScraper.check_for_block at 0x000001906685AFC0>
+          └ <scraper.airlines.indigo.IndigoScraper object at 0x0000019066CB4A50>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 249, in check_for_block
+    content = await page.content()
+                    │    └ <function Page.content at 0x00000190663B4D60>
+                    └ <Page url='https://www.goindigo.in/flight-booking.html'>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\async_api\_generated.py", line 8708, in content
+    return mapping.from_maybe_impl(await self._impl_obj.content())
+           │       │                     │    │         └ <function Page.content at 0x0000019066350AE0>
+           │       │                     │    └ <Page url='https://www.goindigo.in/flight-booking.html'>
+           │       │                     └ <Page url='https://www.goindigo.in/flight-booking.html'>
+           │       └ <function ImplToApiMapping.from_maybe_impl at 0x000001906635EF20>
+           └ <playwright._impl._impl_to_api_mapping.ImplToApiMapping object at 0x0000019066120210>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_page.py", line 507, in content
+    return await self._main_frame.content()
+                 │    │           └ <function Frame.content at 0x0000019066307B00>
+                 │    └ <Frame name= url='https://www.goindigo.in/flight-booking.html'>
+                 └ <Page url='https://www.goindigo.in/flight-booking.html'>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_frame.py", line 416, in content
+    return await self._channel.send("content")
+                 │    │        └ <function Channel.send at 0x00000190661FBA60>
+                 │    └ <playwright._impl._connection.Channel object at 0x000001906C810A50>
+                 └ <Frame name= url='https://www.goindigo.in/flight-booking.html'>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+                 │    │           └ <function Connection.wrap_api_call at 0x00000190662519E0>
+                 │    └ <playwright._impl._connection.Connection object at 0x000001906698A050>
+                 └ <playwright._impl._connection.Channel object at 0x000001906C810A50>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+          └ <function rewrite_error at 0x00000190661ADBC0>
+
+playwright._impl._errors.TargetClosedError: Page.content: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-18 indigo_direct | BrowserContext.close: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-19 indigo_direct | BrowserContext.close: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-21 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-22 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-23 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-24 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-25 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-26 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-27 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-28 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-29 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-09-30 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-01 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-02 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-03 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-04 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-05 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-06 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-07 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-08 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-09 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-10 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-11 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-12 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-16 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-17 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-18 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-19 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-20 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-21 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-22 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-23 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-24 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-25 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-26 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-27 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-28 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-29 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-30 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BOM-DEL 2026-10-31 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-02 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-03 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-04 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-05 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-06 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-07 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-08 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-09 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-10 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-11 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:41 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-12 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-16 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-17 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-18 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-19 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-20 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-21 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-22 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-23 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-24 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-25 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-26 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-27 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-28 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-29 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-09-30 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-01 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-02 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-03 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-04 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-05 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-06 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-07 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-08 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-09 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-10 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-11 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-12 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-16 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-17 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-18 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-19 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-20 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-21 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-22 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-23 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-24 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-25 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-26 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-27 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-28 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-29 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:42 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-30 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BLR 2026-10-31 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-02 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-03 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-04 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-05 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-06 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-07 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-08 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-09 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-10 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-11 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-12 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-16 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-17 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-18 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-19 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-20 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-21 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-22 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-23 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-24 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-25 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-26 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-27 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-28 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-29 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-09-30 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-01 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-02 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-03 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-04 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-05 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-06 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-07 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-08 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-09 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-10 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-11 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-12 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-16 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-17 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-18 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-19 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-20 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-21 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-22 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-23 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-24 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-25 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-26 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:43 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-27 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-28 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-29 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-30 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: BLR-DEL 2026-10-31 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-02 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-03 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-04 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-05 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-06 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-07 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-08 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-09 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-10 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-11 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-12 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-16 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-17 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-18 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-19 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-20 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-21 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-22 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-23 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-24 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-25 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-26 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-27 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-28 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-29 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-09-30 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-01 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-02 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-03 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-04 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-05 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-06 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-07 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-08 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-09 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-10 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-11 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-12 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-16 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-17 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-18 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-19 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-20 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-21 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-22 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-23 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-24 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-25 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-26 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-27 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-28 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-29 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-30 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-CCU 2026-10-31 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-02 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-03 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-04 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-05 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-06 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-07 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-08 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-09 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-10 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-11 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:44 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-12 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-16 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-17 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-18 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-19 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-20 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-21 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-22 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-23 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-24 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-25 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-26 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-27 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-28 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-29 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-09-30 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-01 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-02 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-03 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-04 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-05 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-06 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-07 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-08 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-09 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-10 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-11 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-12 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 19:33:45 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: CCU-DEL 2026-10-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 21:45:28 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BOM-20260903&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279328118&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BOM-20260903&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279328118&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:45:28 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BOM-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279328165&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BOM-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279328165&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:45:28 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BOM-20260904&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279328186&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BOM-20260904&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279328186&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:45:49 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-DEL-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279349484&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-DEL-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279349484&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:45:50 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-DEL-20260904&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279350106&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-DEL-20260904&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279350106&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:45:50 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-DEL-20260903&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279350135&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-DEL-20260903&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279350135&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:46:10 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BLR-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279370561&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BLR-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279370561&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:46:11 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BLR-20260904&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279371269&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BLR-20260904&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279371269&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:46:11 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BLR-20260903&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279371283&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BLR-20260903&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279371283&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:46:15 | ERROR    | scraper.base_scraper:176 - [air_india_direct] PARSE ERROR: Failed to load Air India page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.airindia.com/in/en/book/flight-search.html
+Call log:
+navigating to "https://www.airindia.com/in/en/book/flight-search.html", waiting until "domcontentloaded"
+
+2026-09-01 21:46:31 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=BLR-DEL-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279391577&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=BLR-DEL-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279391577&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:46:32 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=BLR-DEL-20260903&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279392465&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=BLR-DEL-20260903&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279392465&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:46:32 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=BLR-DEL-20260904&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279392497&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=BLR-DEL-20260904&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279392497&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:46:44 | ERROR    | scraper.base_scraper:176 - [makemytrip] PARSE ERROR: Failed to load MMT page: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-DEL-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279404329&sSpeed=5
+Call log:
+navigating to "https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-DEL-20260902&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788279404329&sSpeed=5", waiting until "domcontentloaded"
+
+2026-09-01 21:58:30 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_TIMED_OUT at https://www.ixigo.com/search/result/flight?from=BOM&to=DEL&date=20260910&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=BOM&to=DEL&date=20260910&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:02:52 | ERROR    | scraper.base_scraper:176 - [indigo_direct] PARSE ERROR: All IndiGo URL patterns failed to load
+2026-09-01 22:03:19 | ERROR    | scraper.base_scraper:185 - [indigo_direct] Unexpected error: Page.content: Target page, context or browser has been closed
+Traceback (most recent call last):
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 294, in <module>
+    cli()
+    └ <Group cli>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function BaseCommand.main at 0x00000142596C31A0>
+           └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x000001425A65ED50>
+         │    └ <function MultiCommand.invoke at 0x00000142596D0400>
+         └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+           │               │       │       │      └ <click.core.Context object at 0x000001425A639F90>
+           │               │       │       └ <function Command.invoke at 0x00000142596C3D80>
+           │               │       └ <Command scrape>
+           │               └ <click.core.Context object at 0x000001425A639F90>
+           └ <function MultiCommand.invoke.<locals>._process_result at 0x000001425A8AD9E0>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+           │   │      │    │           └ <click.core.Context object at 0x000001425A639F90>
+           │   │      │    └ <function cmd_scrape at 0x000001425A661940>
+           │   │      └ <Command scrape>
+           │   └ <function Context.invoke at 0x00000142596C2700>
+           └ <click.core.Context object at 0x000001425A639F90>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+                       │       └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+                       └ ()
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 193, in cmd_scrape
+    results = asyncio.run(
+              │       └ <function run at 0x0000014257A754E0>
+              └ <module 'asyncio' from 'C:\\Users\\a\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_all at 0x000001425C9AD3C0>
+           │      └ <function Runner.run at 0x00000142594BD580>
+           └ <asyncio.runners.Runner object at 0x000001425A65FE90>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_all() running at C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py:...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000142594B7060>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001425A65FE90>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000001425957F240>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000142594BCE00>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000014257A2A3E0>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py", line 71, in run_single_job
+    raw_records: list[FareRecord] = await scraper.scrape(
+                      │                   │       └ <function BaseScraper.scrape at 0x000001425C90ED40>
+                      │                   └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+                      └ <class 'scraper.base_scraper.FareRecord'>
+
+> File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 149, in scrape
+    async for attempt in AsyncRetrying(
+              │          └ <class 'tenacity.asyncio.AsyncRetrying'>
+              └ <tenacity.AttemptManager object at 0x0000014262F629D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 1384639761744: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+               │    │                └ <AsyncRetrying object at 0x14262f62950 (stop=<tenacity.stop.stop_after_attempt object at 0x000001425DDBB8D0>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x000001425C4C8040>
+               └ <AsyncRetrying object at 0x14262f62950 (stop=<tenacity.stop.stop_after_attempt object at 0x000001425DDBB8D0>, wait=<tenacity....
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 1384639761744: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x0000014262F74CC0>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 1384639761744: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, ...
+           └ <function BaseRetrying._post_retry_check_actions.<locals>.<lambda> at 0x0000014262F74AE0>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                 │   │  │       └ <function Future.result at 0x0000014257699080>
+                                 │   │  └ <Future at 0x14262fd7550 state=finished raised TargetClosedError>
+                                 │   └ <RetryCallState 1384639761744: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                                 └ <RetryCallState 1384639761744: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 161, in scrape
+    records = await self._fetch(page, route, travel_date)
+                    │    │      │     │      └ datetime.date(2026, 9, 20)
+                    │    │      │     └ Route(origin='DEL', destination='BLR')
+                    │    │      └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxType=ADT&...
+                    │    └ <function IndigoScraper._fetch at 0x000001425C262660>
+                    └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 114, in _fetch
+    records = await self._parse_html(page, route, travel_date)
+                    │    │           │     │      └ datetime.date(2026, 9, 20)
+                    │    │           │     └ Route(origin='DEL', destination='BLR')
+                    │    │           └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxType=ADT&...
+                    │    └ <function IndigoScraper._parse_html at 0x000001425C90F560>
+                    └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 274, in _parse_html
+    found = await self.wait_for_results(page, selector_str, timeout=20_000)
+                  │    │                │     └ ".flight-card, .result-item, [class*='FlightCard'], [class*='flight-card'], [class*='flightCard'], [class*='flight_card'], [d...
+                  │    │                └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxType=ADT&...
+                  │    └ <function BaseScraper.wait_for_results at 0x000001425C90F100>
+                  └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 283, in wait_for_results
+    await self.check_for_block(page)
+          │    │               └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxType=ADT&...
+          │    └ <function BaseScraper.check_for_block at 0x000001425C90F060>
+          └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 249, in check_for_block
+    content = await page.content()
+                    │    └ <function Page.content at 0x000001425C460E00>
+                    └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxType=ADT&...
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\async_api\_generated.py", line 8708, in content
+    return mapping.from_maybe_impl(await self._impl_obj.content())
+           │       │                     │    │         └ <function Page.content at 0x000001425C404B80>
+           │       │                     │    └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxType=ADT&...
+           │       │                     └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxType=ADT&...
+           │       └ <function ImplToApiMapping.from_maybe_impl at 0x000001425C412FC0>
+           └ <playwright._impl._impl_to_api_mapping.ImplToApiMapping object at 0x000001425C3F7C50>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_page.py", line 507, in content
+    return await self._main_frame.content()
+                 │    │           └ <function Frame.content at 0x000001425C3B7BA0>
+                 │    └ <Frame name= url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxTy...
+                 └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxType=ADT&...
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_frame.py", line 416, in content
+    return await self._channel.send("content")
+                 │    │        └ <function Channel.send at 0x000001425C2ABB00>
+                 │    └ <playwright._impl._connection.Channel object at 0x0000014262F61890>
+                 └ <Frame name= url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=20092026&tripType=O&paxTy...
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+                 │    │           └ <function Connection.wrap_api_call at 0x000001425C301A80>
+                 │    └ <playwright._impl._connection.Connection object at 0x000001425CA42950>
+                 └ <playwright._impl._connection.Channel object at 0x0000014262F61890>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+          └ <function rewrite_error at 0x000001425C261EE0>
+
+playwright._impl._errors.TargetClosedError: Page.content: Target page, context or browser has been closed
+2026-09-01 22:03:19 | ERROR    | scraper.base_scraper:185 - [indigo_direct] Unexpected error: Page.content: Target page, context or browser has been closed
+Traceback (most recent call last):
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 294, in <module>
+    cli()
+    └ <Group cli>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function BaseCommand.main at 0x00000142596C31A0>
+           └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x000001425A65ED50>
+         │    └ <function MultiCommand.invoke at 0x00000142596D0400>
+         └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+           │               │       │       │      └ <click.core.Context object at 0x000001425A639F90>
+           │               │       │       └ <function Command.invoke at 0x00000142596C3D80>
+           │               │       └ <Command scrape>
+           │               └ <click.core.Context object at 0x000001425A639F90>
+           └ <function MultiCommand.invoke.<locals>._process_result at 0x000001425A8AD9E0>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+           │   │      │    │           └ <click.core.Context object at 0x000001425A639F90>
+           │   │      │    └ <function cmd_scrape at 0x000001425A661940>
+           │   │      └ <Command scrape>
+           │   └ <function Context.invoke at 0x00000142596C2700>
+           └ <click.core.Context object at 0x000001425A639F90>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+                       │       └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+                       └ ()
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 193, in cmd_scrape
+    results = asyncio.run(
+              │       └ <function run at 0x0000014257A754E0>
+              └ <module 'asyncio' from 'C:\\Users\\a\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_all at 0x000001425C9AD3C0>
+           │      └ <function Runner.run at 0x00000142594BD580>
+           └ <asyncio.runners.Runner object at 0x000001425A65FE90>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_all() running at C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py:...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000142594B7060>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001425A65FE90>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000001425957F240>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000142594BCE00>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000014257A2A3E0>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py", line 71, in run_single_job
+    raw_records: list[FareRecord] = await scraper.scrape(
+                      │                   │       └ <function BaseScraper.scrape at 0x000001425C90ED40>
+                      │                   └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+                      └ <class 'scraper.base_scraper.FareRecord'>
+
+> File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 149, in scrape
+    async for attempt in AsyncRetrying(
+              │          └ <class 'tenacity.asyncio.AsyncRetrying'>
+              └ <tenacity.AttemptManager object at 0x0000014262FD5C10>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 1384640240528: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+               │    │                └ <AsyncRetrying object at 0x14262fb9110 (stop=<tenacity.stop.stop_after_attempt object at 0x0000014262E9A5D0>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x000001425C4C8040>
+               └ <AsyncRetrying object at 0x14262fb9110 (stop=<tenacity.stop.stop_after_attempt object at 0x0000014262E9A5D0>, wait=<tenacity....
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 1384640240528: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x0000014262FC3C40>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 1384640240528: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, ...
+           └ <function BaseRetrying._post_retry_check_actions.<locals>.<lambda> at 0x0000014262FC3A60>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                 │   │  │       └ <function Future.result at 0x0000014257699080>
+                                 │   │  └ <Future at 0x14262d04a90 state=finished raised TargetClosedError>
+                                 │   └ <RetryCallState 1384640240528: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                                 └ <RetryCallState 1384640240528: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 161, in scrape
+    records = await self._fetch(page, route, travel_date)
+                    │    │      │     │      └ datetime.date(2026, 9, 22)
+                    │    │      │     └ Route(origin='DEL', destination='BLR')
+                    │    │      └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxType=ADT&...
+                    │    └ <function IndigoScraper._fetch at 0x000001425C262660>
+                    └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 114, in _fetch
+    records = await self._parse_html(page, route, travel_date)
+                    │    │           │     │      └ datetime.date(2026, 9, 22)
+                    │    │           │     └ Route(origin='DEL', destination='BLR')
+                    │    │           └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxType=ADT&...
+                    │    └ <function IndigoScraper._parse_html at 0x000001425C90F560>
+                    └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 274, in _parse_html
+    found = await self.wait_for_results(page, selector_str, timeout=20_000)
+                  │    │                │     └ ".flight-card, .result-item, [class*='FlightCard'], [class*='flight-card'], [class*='flightCard'], [class*='flight_card'], [d...
+                  │    │                └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxType=ADT&...
+                  │    └ <function BaseScraper.wait_for_results at 0x000001425C90F100>
+                  └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 283, in wait_for_results
+    await self.check_for_block(page)
+          │    │               └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxType=ADT&...
+          │    └ <function BaseScraper.check_for_block at 0x000001425C90F060>
+          └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 249, in check_for_block
+    content = await page.content()
+                    │    └ <function Page.content at 0x000001425C460E00>
+                    └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxType=ADT&...
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\async_api\_generated.py", line 8708, in content
+    return mapping.from_maybe_impl(await self._impl_obj.content())
+           │       │                     │    │         └ <function Page.content at 0x000001425C404B80>
+           │       │                     │    └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxType=ADT&...
+           │       │                     └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxType=ADT&...
+           │       └ <function ImplToApiMapping.from_maybe_impl at 0x000001425C412FC0>
+           └ <playwright._impl._impl_to_api_mapping.ImplToApiMapping object at 0x000001425C3F7C50>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_page.py", line 507, in content
+    return await self._main_frame.content()
+                 │    │           └ <function Frame.content at 0x000001425C3B7BA0>
+                 │    └ <Frame name= url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxTy...
+                 └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxType=ADT&...
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_frame.py", line 416, in content
+    return await self._channel.send("content")
+                 │    │        └ <function Channel.send at 0x000001425C2ABB00>
+                 │    └ <playwright._impl._connection.Channel object at 0x0000014262FC6E10>
+                 └ <Frame name= url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=22092026&tripType=O&paxTy...
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+                 │    │           └ <function Connection.wrap_api_call at 0x000001425C301A80>
+                 │    └ <playwright._impl._connection.Connection object at 0x000001425CA42950>
+                 └ <playwright._impl._connection.Channel object at 0x0000014262FC6E10>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+          └ <function rewrite_error at 0x000001425C261EE0>
+
+playwright._impl._errors.TargetClosedError: Page.content: Target page, context or browser has been closed
+2026-09-01 22:03:19 | ERROR    | scraper.base_scraper:185 - [indigo_direct] Unexpected error: Page.content: Target page, context or browser has been closed
+Traceback (most recent call last):
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 294, in <module>
+    cli()
+    └ <Group cli>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function BaseCommand.main at 0x00000142596C31A0>
+           └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x000001425A65ED50>
+         │    └ <function MultiCommand.invoke at 0x00000142596D0400>
+         └ <Group cli>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+           │               │       │       │      └ <click.core.Context object at 0x000001425A639F90>
+           │               │       │       └ <function Command.invoke at 0x00000142596C3D80>
+           │               │       └ <Command scrape>
+           │               └ <click.core.Context object at 0x000001425A639F90>
+           └ <function MultiCommand.invoke.<locals>._process_result at 0x000001425A8AD9E0>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+           │   │      │    │           └ <click.core.Context object at 0x000001425A639F90>
+           │   │      │    └ <function cmd_scrape at 0x000001425A661940>
+           │   │      └ <Command scrape>
+           │   └ <function Context.invoke at 0x00000142596C2700>
+           └ <click.core.Context object at 0x000001425A639F90>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\click\core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+                       │       └ {'route': None, 'travel_date': None, 'days': None, 'portal': None, 'airlines_only': False, 'otas_only': False}
+                       └ ()
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\main.py", line 193, in cmd_scrape
+    results = asyncio.run(
+              │       └ <function run at 0x0000014257A754E0>
+              └ <module 'asyncio' from 'C:\\Users\\a\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_all at 0x000001425C9AD3C0>
+           │      └ <function Runner.run at 0x00000142594BD580>
+           └ <asyncio.runners.Runner object at 0x000001425A65FE90>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_all() running at C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py:...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000142594B7060>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001425A65FE90>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000001425957F240>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000142594BCE00>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000014257A2A3E0>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\orchestrator\job_runner.py", line 71, in run_single_job
+    raw_records: list[FareRecord] = await scraper.scrape(
+                      │                   │       └ <function BaseScraper.scrape at 0x000001425C90ED40>
+                      │                   └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+                      └ <class 'scraper.base_scraper.FareRecord'>
+
+> File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 149, in scrape
+    async for attempt in AsyncRetrying(
+              │          └ <class 'tenacity.asyncio.AsyncRetrying'>
+              └ <tenacity.AttemptManager object at 0x0000014262FA6990>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 1384640047376: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+               │    │                └ <AsyncRetrying object at 0x14262bd7290 (stop=<tenacity.stop.stop_after_attempt object at 0x0000014262F39010>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x000001425C4C8040>
+               └ <AsyncRetrying object at 0x14262bd7290 (stop=<tenacity.stop.stop_after_attempt object at 0x0000014262F39010>, wait=<tenacity....
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 1384640047376: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x0000014262FB79C0>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 1384640047376: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, ...
+           └ <function BaseRetrying._post_retry_check_actions.<locals>.<lambda> at 0x0000014262FB7A60>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\tenacity\__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                 │   │  │       └ <function Future.result at 0x0000014257699080>
+                                 │   │  └ <Future at 0x14262e70dd0 state=finished raised TargetClosedError>
+                                 │   └ <RetryCallState 1384640047376: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+                                 └ <RetryCallState 1384640047376: attempt #1; slept for 0.0; last result: failed (TargetClosedError Page.content: Target page, c...
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\a\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 161, in scrape
+    records = await self._fetch(page, route, travel_date)
+                    │    │      │     │      └ datetime.date(2026, 9, 21)
+                    │    │      │     └ Route(origin='DEL', destination='BLR')
+                    │    │      └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxType=ADT&...
+                    │    └ <function IndigoScraper._fetch at 0x000001425C262660>
+                    └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 114, in _fetch
+    records = await self._parse_html(page, route, travel_date)
+                    │    │           │     │      └ datetime.date(2026, 9, 21)
+                    │    │           │     └ Route(origin='DEL', destination='BLR')
+                    │    │           └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxType=ADT&...
+                    │    └ <function IndigoScraper._parse_html at 0x000001425C90F560>
+                    └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\airlines\indigo.py", line 274, in _parse_html
+    found = await self.wait_for_results(page, selector_str, timeout=20_000)
+                  │    │                │     └ ".flight-card, .result-item, [class*='FlightCard'], [class*='flight-card'], [class*='flightCard'], [class*='flight_card'], [d...
+                  │    │                └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxType=ADT&...
+                  │    └ <function BaseScraper.wait_for_results at 0x000001425C90F100>
+                  └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 283, in wait_for_results
+    await self.check_for_block(page)
+          │    │               └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxType=ADT&...
+          │    └ <function BaseScraper.check_for_block at 0x000001425C90F060>
+          └ <scraper.airlines.indigo.IndigoScraper object at 0x000001425CD593D0>
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\scraper\base_scraper.py", line 249, in check_for_block
+    content = await page.content()
+                    │    └ <function Page.content at 0x000001425C460E00>
+                    └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxType=ADT&...
+
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\async_api\_generated.py", line 8708, in content
+    return mapping.from_maybe_impl(await self._impl_obj.content())
+           │       │                     │    │         └ <function Page.content at 0x000001425C404B80>
+           │       │                     │    └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxType=ADT&...
+           │       │                     └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxType=ADT&...
+           │       └ <function ImplToApiMapping.from_maybe_impl at 0x000001425C412FC0>
+           └ <playwright._impl._impl_to_api_mapping.ImplToApiMapping object at 0x000001425C3F7C50>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_page.py", line 507, in content
+    return await self._main_frame.content()
+                 │    │           └ <function Frame.content at 0x000001425C3B7BA0>
+                 │    └ <Frame name= url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxTy...
+                 └ <Page url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxType=ADT&...
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_frame.py", line 416, in content
+    return await self._channel.send("content")
+                 │    │        └ <function Channel.send at 0x000001425C2ABB00>
+                 │    └ <playwright._impl._connection.Channel object at 0x0000014262F26490>
+                 └ <Frame name= url='https://www.goindigo.in/flight-booking.html?origin=DEL&destination=BLR&departDate=21092026&tripType=O&paxTy...
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+                 │    │           └ <function Connection.wrap_api_call at 0x000001425C301A80>
+                 │    └ <playwright._impl._connection.Connection object at 0x000001425CA42950>
+                 └ <playwright._impl._connection.Channel object at 0x0000014262F26490>
+  File "C:\Users\a\OneDrive\Desktop\AirFareScapper\venv\Lib\site-packages\playwright\_impl\_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+          └ <function rewrite_error at 0x000001425C261EE0>
+
+playwright._impl._errors.TargetClosedError: Page.content: Target page, context or browser has been closed
+2026-09-01 22:05:57 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_TIMED_OUT at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260902&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260902&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:06:44 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_TIMED_OUT at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260903&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260903&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:10:20 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_TIMED_OUT at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260908&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260908&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:11:33 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_CONNECTION_RESET at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260922&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260922&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:11:33 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_TIMED_OUT at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260910&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260910&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:12:22 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_CONNECTION_RESET at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260925&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260925&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:14:48 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_CONNECTION_RESET at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20261006&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20261006&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:15:24 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_TIMED_OUT at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260920&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260920&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:15:34 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_CONNECTION_RESET at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20261010&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20261010&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:16:11 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_TIMED_OUT at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260921&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260921&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:16:57 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_TIMED_OUT at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260922&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20260922&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:17:11 | ERROR    | scraper.base_scraper:176 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_TIMED_OUT at https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20261026&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=DEL&to=BOM&date=20261026&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-09-30 ixigo | BrowserContext.close: Target page, context or browser has been closed
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-10-01 ixigo | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-10-02 ixigo | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-10-03 ixigo | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-10-04 ixigo | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-10-05 ixigo | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-10-06 ixigo | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-10-07 ixigo | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-10-08 ixigo | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 22:49:49 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-10-09 ixigo | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 23:25:13 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-09-13 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 23:25:13 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-09-14 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 23:25:13 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-09-15 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 23:25:14 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-09-16 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 23:25:14 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-09-17 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 23:25:14 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-09-18 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 23:25:14 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-09-19 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-01 23:25:14 | ERROR    | orchestrator.job_runner:94 - [runner] Job FAILED: DEL-BOM 2026-09-20 indigo_direct | Browser.new_context: Target page, context or browser has been closed
+2026-09-08 20:39:41 | ERROR    | scraper.base_scraper:176 - [indigo_direct] PARSE ERROR: All IndiGo URL patterns failed to load
+2026-09-09 19:22:28 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Failed to load Akasa page: Page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://www.akasaair.com/booking/flight-search
+Call log:
+navigating to "https://www.akasaair.com/booking/flight-search", waiting until "domcontentloaded"
+
+2026-09-09 19:23:37 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-DEL 2026-09-15 spicejet_direct | Browser.new_context: Timeout 30000ms exceeded.
+Call log:
+navigating to "https://www.airindia.com/", waiting until "load"
+  - navigating to "https://www.goindigo.in/", waiting until "load"
+  - navigating to "https://www.ixigo.com/", waiting until "load"
+  - navigating to "https://www.google.com/", waiting until "load"
+
+2026-09-09 19:33:24 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Failed to load Akasa page: Page.goto: net::ERR_ABORTED at https://www.akasaair.com/booking/flight-search
+Call log:
+navigating to "https://www.akasaair.com/booking/flight-search", waiting until "domcontentloaded"
+
+2026-09-09 19:41:08 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Failed to load Akasa page: Page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://www.akasaair.com/booking/flight-search
+Call log:
+navigating to "https://www.akasaair.com/booking/flight-search", waiting until "domcontentloaded"
+
+2026-09-09 19:49:44 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Failed to load Akasa page: Page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://www.akasaair.com/booking/flight-search
+Call log:
+navigating to "https://www.akasaair.com/booking/flight-search", waiting until "domcontentloaded"
+
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-16 akasa_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: DEL-HYD 2026-10-09 easemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-16 spicejet_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: DEL-HYD 2026-10-24 indigo_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-16 makemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: DEL-HYD 2026-10-24 air_india_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-16 cleartrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: DEL-HYD 2026-10-24 akasa_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-16 ixigo | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: DEL-HYD 2026-10-24 spicejet_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-16 easemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: DEL-HYD 2026-10-24 makemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-24 indigo_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: DEL-HYD 2026-10-24 cleartrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-24 air_india_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: DEL-HYD 2026-10-24 ixigo | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-24 akasa_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: DEL-HYD 2026-10-24 easemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-24 spicejet_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-24 makemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:20 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-24 cleartrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-24 ixigo | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-09-24 easemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-09 indigo_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-09 air_india_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-09 akasa_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-09 spicejet_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-09 makemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-09 cleartrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-09 ixigo | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-09 easemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-24 indigo_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-24 air_india_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-24 akasa_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-24 spicejet_direct | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-24 makemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-24 cleartrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-24 ixigo | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:13:21 | ERROR    | orchestrator.job_runner:152 - [runner] Job FAILED: BLR-BOM 2026-10-24 easemytrip | Extra data: line 1 column 407220 (char 407219)
+2026-09-09 20:41:31 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 20:42:39 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 20:43:39 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 20:45:54 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 22:01:45 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 22:03:14 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 22:05:39 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 22:08:04 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 22:19:51 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 22:20:40 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 22:22:31 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 22:24:12 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 22:28:11 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 22:28:49 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: No usable akasa booking page. https://www.akasaair.com/flight-booking: Page.goto: Target page, context or browser has been closed; https://www.akasaair.com/: Page.goto: Target page, context or browser has been closed
+2026-09-09 22:30:35 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 22:32:01 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 22:35:17 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 22:36:05 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 22:37:51 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 22:40:14 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 22:40:40 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 22:41:11 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 22:43:22 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 22:43:57 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 22:44:39 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 22:46:13 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 22:46:25 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 22:47:27 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 22:53:11 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 22:54:35 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 22:57:07 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 22:57:15 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 22:58:07 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 22:59:56 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:00:03 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:01:23 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:04:35 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:05:15 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:07:11 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:08:46 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:13:04 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:13:47 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:15:33 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:16:28 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:19:29 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:20:11 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:22:26 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:22:31 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:24:03 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:24:08 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:24:25 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:25:10 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:27:14 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:27:34 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:29:16 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: No usable makemytrip booking page. https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BLR-10092026&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788976706020&sSpeed=5: placeholder response: 200-OK; https://www.makemytrip.com/flights/: Page.goto: Timeout 50000ms exceeded.
+Call log:
+navigating to "https://www.makemytrip.com/flights/", waiting until "domcontentloaded"
+
+2026-09-09 23:33:32 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:34:49 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:36:00 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:37:11 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:37:51 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:37:58 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:39:15 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:39:30 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:40:30 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:43:31 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:44:19 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:44:40 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:45:49 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:46:30 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:48:02 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-09 23:48:13 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:49:26 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-09 23:55:20 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-09 23:56:11 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-09 23:56:40 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-10 00:00:35 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: No usable akasa booking page. https://www.akasaair.com/flight-booking: Page.goto: Timeout 45000ms exceeded.
+Call log:
+navigating to "https://www.akasaair.com/flight-booking", waiting until "domcontentloaded"
+; https://www.akasaair.com/: Page.goto: Timeout 45000ms exceeded.
+Call log:
+navigating to "https://www.akasaair.com/", waiting until "domcontentloaded"
+
+2026-09-10 00:01:42 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: No usable spicejet booking page. https://book.spicejet.com/: Page.goto: Timeout 45000ms exceeded.
+Call log:
+navigating to "https://book.spicejet.com/", waiting until "domcontentloaded"
+; https://www.spicejet.com/: Page.goto: Timeout 45000ms exceeded.
+Call log:
+navigating to "https://www.spicejet.com/", waiting until "domcontentloaded"
+
+2026-09-10 00:05:36 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-10 00:07:02 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: No usable makemytrip booking page. https://www.makemytrip.com/flight/search?tripType=O&itinerary=DEL-BLR-09102026&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1788978937632&sSpeed=5: placeholder response: 200-OK; https://www.makemytrip.com/flights/: Page.goto: Timeout 50000ms exceeded.
+Call log:
+navigating to "https://www.makemytrip.com/flights/", waiting until "domcontentloaded"
+
+2026-09-10 00:08:40 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-10 00:10:32 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: No usable air_india booking page. https://www.airindia.com/in/en/book/search-flights.html: HTTP 403; https://www.airindia.com/en-in/book-flights/: HTTP 403
+2026-09-10 00:15:06 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-10 00:15:21 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: No usable air_india booking page. https://www.airindia.com/in/en/book/search-flights.html: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.airindia.com/in/en/book/search-flights.html
+Call log:
+navigating to "https://www.airindia.com/in/en/book/search-flights.html", waiting until "domcontentloaded"
+; https://www.airindia.com/en-in/book-flights/: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.airindia.com/en-in/book-flights/
+Call log:
+navigating to "https://www.airindia.com/en-in/book-flights/", waiting until "domcontentloaded"
+
+2026-09-10 00:15:50 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India origin control was not found
+2026-09-10 00:16:17 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-10 00:16:39 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: Akasa origin control was not found
+2026-09-10 00:17:23 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-10 00:18:21 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-10 00:18:33 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: SpiceJet origin control was not found
+2026-09-10 00:19:41 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-10 00:20:40 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: MakeMyTrip returned a placeholder page and its booking form could not be used
+2026-09-10 00:21:50 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: Air India destination control was not found
+2026-09-10 11:38:27 | ERROR    | scraper.base_scraper:185 - [indigo_direct] PARSE ERROR: All IndiGo URL patterns failed to load
+2026-09-10 11:39:00 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: No usable air_india booking page. https://www.airindia.com/in/en/book/search-flights.html: Page.goto: Target page, context or browser has been closed; https://www.airindia.com/en-in/book-flights/: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:39:33 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: No usable akasa booking page. https://www.akasaair.com/flight-booking: Page.goto: Target page, context or browser has been closed; https://www.akasaair.com/: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:40:06 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: No usable spicejet booking page. https://book.spicejet.com/: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://book.spicejet.com/
+Call log:
+navigating to "https://book.spicejet.com/", waiting until "domcontentloaded"
+; https://www.spicejet.com/: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.spicejet.com/
+Call log:
+navigating to "https://www.spicejet.com/", waiting until "domcontentloaded"
+
+2026-09-10 11:40:38 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: No usable makemytrip booking page. https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-CCU-11092026&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1789020638343&sSpeed=5: Page.goto: Target page, context or browser has been closed; https://www.makemytrip.com/flights/: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:41:11 | ERROR    | scraper.base_scraper:185 - [cleartrip] PARSE ERROR: Failed to load Cleartrip page: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=11/09/2026&from=BOM&to=CCU&intl=n&origin=BOM&destination=CCU
+Call log:
+navigating to "https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=11/09/2026&from=BOM&to=CCU&intl=n&origin=BOM&destination=CCU", waiting until "domcontentloaded"
+
+2026-09-10 11:41:43 | ERROR    | scraper.base_scraper:185 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ixigo.com/search/result/flight?from=BOM&to=CCU&date=11092026&adults=1&children=0&infants=0&class=e&source=Search
+Call log:
+navigating to "https://www.ixigo.com/search/result/flight?from=BOM&to=CCU&date=11092026&adults=1&children=0&infants=0&class=e&source=Search", waiting until "domcontentloaded"
+
+2026-09-10 11:42:16 | ERROR    | scraper.base_scraper:185 - [easemytrip] PARSE ERROR: Failed to load EaseMyTrip page: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://flight.easemytrip.com/FlightList/Index?from=BOM&to=CCU&date=11/09/2026&pax=1-0-0&isNearBy=False&cabin=1
+Call log:
+navigating to "https://flight.easemytrip.com/FlightList/Index?from=BOM&to=CCU&date=11/09/2026&pax=1-0-0&isNearBy=False&cabin=1", waiting until "domcontentloaded"
+
+2026-09-10 11:42:49 | ERROR    | scraper.base_scraper:185 - [indigo_direct] PARSE ERROR: All IndiGo URL patterns failed to load
+2026-09-10 11:43:21 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: No usable air_india booking page. https://www.airindia.com/in/en/book/search-flights.html: Page.goto: Target page, context or browser has been closed; https://www.airindia.com/en-in/book-flights/: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:43:54 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: No usable akasa booking page. https://www.akasaair.com/flight-booking: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.akasaair.com/flight-booking
+Call log:
+navigating to "https://www.akasaair.com/flight-booking", waiting until "domcontentloaded"
+; https://www.akasaair.com/: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.akasaair.com/
+Call log:
+navigating to "https://www.akasaair.com/", waiting until "domcontentloaded"
+
+2026-09-10 11:44:27 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: No usable spicejet booking page. https://book.spicejet.com/: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://book.spicejet.com/
+Call log:
+navigating to "https://book.spicejet.com/", waiting until "domcontentloaded"
+; https://www.spicejet.com/: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.spicejet.com/
+Call log:
+navigating to "https://www.spicejet.com/", waiting until "domcontentloaded"
+
+2026-09-10 11:45:00 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: No usable makemytrip booking page. https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-CCU-17092026&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1789020900167&sSpeed=5: Page.goto: Target page, context or browser has been closed; https://www.makemytrip.com/flights/: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:45:32 | ERROR    | scraper.base_scraper:185 - [cleartrip] PARSE ERROR: Failed to load Cleartrip page: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=17/09/2026&from=BOM&to=CCU&intl=n&origin=BOM&destination=CCU
+Call log:
+navigating to "https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=17/09/2026&from=BOM&to=CCU&intl=n&origin=BOM&destination=CCU", waiting until "domcontentloaded"
+
+2026-09-10 11:46:05 | ERROR    | scraper.base_scraper:185 - [ixigo] PARSE ERROR: Failed to load Ixigo page: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:46:36 | ERROR    | scraper.base_scraper:185 - [easemytrip] PARSE ERROR: Failed to load EaseMyTrip page: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:47:09 | ERROR    | scraper.base_scraper:185 - [indigo_direct] PARSE ERROR: All IndiGo URL patterns failed to load
+2026-09-10 11:47:41 | ERROR    | scraper.base_scraper:185 - [air_india_direct] PARSE ERROR: No usable air_india booking page. https://www.airindia.com/in/en/book/search-flights.html: Page.goto: Target page, context or browser has been closed; https://www.airindia.com/en-in/book-flights/: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:48:14 | ERROR    | scraper.base_scraper:185 - [akasa_direct] PARSE ERROR: No usable akasa booking page. https://www.akasaair.com/flight-booking: Page.goto: Target page, context or browser has been closed; https://www.akasaair.com/: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:48:46 | ERROR    | scraper.base_scraper:185 - [spicejet_direct] PARSE ERROR: No usable spicejet booking page. https://book.spicejet.com/: Page.goto: Target page, context or browser has been closed; https://www.spicejet.com/: Page.goto: Target page, context or browser has been closed
+2026-09-10 11:49:19 | ERROR    | scraper.base_scraper:185 - [makemytrip] PARSE ERROR: No usable makemytrip booking page. https://www.makemytrip.com/flight/search?tripType=O&itinerary=BOM-CCU-25092026&paxType=A-1_C-0_I-0&cabinClass=E&sTime=1789021159242&sSpeed=5: Page.goto: Target page, context or browser has been closed; https://www.makemytrip.com/flights/: Page.goto: Target page, context or browser has been closed

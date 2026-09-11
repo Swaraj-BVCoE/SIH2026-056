@@ -1,0 +1,1 @@
+id,scraped_at,travel_date,origin,destination,airline,flight_number,departure_time,arrival_time,duration_minutes,stops,fare_class,base_fare,taxes_fees,total_fare,currency,source_portal,advance_days,is_outlier
